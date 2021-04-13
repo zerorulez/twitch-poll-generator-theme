@@ -5,8 +5,6 @@
 [![Build Status][travis-image]][travis-url]
 [![Downloads Stats][npm-downloads]][npm-url]
 
-You can change this, build and put on the theme folder on the Twitch Poll Generator.
-
 ## Installation
 
 ```sh
@@ -20,14 +18,14 @@ Start application
 npm run serve
 ```
 
-Change what you want on the theme
+Change what you want on the theme.
 
 Build application
 ```sh
 npm run build
 ```
 
-Now just copy the content of the dist folder to the twitch-poll-generator/dist_electron/theme and replace the files.
+Now just copy the content of the dist folder to the theme folder on the root of Twitch Poll Generator and replace the files.
 
 ## Meta
 
