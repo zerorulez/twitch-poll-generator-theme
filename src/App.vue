@@ -1,7 +1,7 @@
 <template>
-  <div id="app" :class="{'visible': results.length > 0}">
-    <h2>Replys</h2>
-    <div class="reply" v-for="(item, index) in results" :key="index">
+  <div id="app" :class="{'visible': poll.results.length > 0}">
+    <h2>{{poll.question}}</h2>
+    <div class="reply" v-for="(item, index) in poll.results" :key="index">
       <div class="reply-header">
         <p>{{item.word}}</p>
         <p>{{item.count}} Votes</p>
@@ -23,12 +23,15 @@ export default {
   name: 'App',
   data() {
     return {
-      results: []
+      poll: {
+        question: '',
+        results: []
+      }
     }
   },
   sockets: {
     results: function(data) {
-      this.results = data
+      this.poll = data
     }
   },
 }
@@ -45,6 +48,7 @@ body {
   color: #2c3e50;
   opacity: 0;
   transition: opacity .3s;
+  font-size: 24px;
 }
 .visible {
   opacity: 1 !important;
